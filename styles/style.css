@@ -11,7 +11,7 @@
 
 .header {
 	padding: 10px;
-	height: 668px;
+	height: 100vh;
 	display: grid;
 	position: relative;
 	grid-template-rows: 1fr min-content 1fr;
@@ -21,10 +21,8 @@
 .decorated-zone::before {
 	content: '';
 	position: absolute;
-	top: 0;
-	right: 0;
-	margin-right: 10px;
-	margin-top: 10px;
+	top: 10px;
+	right: 10px;
 	width: 25px;
 	height: 25px;
 	border-top: 1px solid #ff0070;
@@ -34,10 +32,8 @@
 .decorated-zone::after {
 	content: '';
 	position: absolute;
-	bottom: 0;
-	left: 0;
-	margin-left: 10px;
-	margin-bottom: 10px;
+	bottom: 10px;
+	left: 10px;
 	width: 25px;
 	height: 25px;
 	border-left: 1px solid #ff0070;
@@ -47,31 +43,46 @@
 .header__theme-menu-list {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 12px;
 	align-items: flex-end;
+}
+
+.header__theme-menu-item {
+	display: flex;
+	justify-content: flex-end;
 }
 
 .header__theme-menu-button {
 	all: unset;
-	cursor: pointer;
-	padding: 4px 13px;
-	font-family: 'IBM Plex Mono', sans-serif;
+	padding-top: 1.5px;
+	padding-right: 13px;
+	padding-bottom: 4.5px;
+	padding-left: 13px;
 	font-weight: 400;
-	font-size: 18px;
 	line-height: 18px;
 	letter-spacing: 0;
 	color: #ff0070;
 	text-transform: lowercase;
+	box-sizing: border-box;
+	vertical-align: middle;
 }
 
-.header__theme-menu-button_active {
+.header__theme-menu-button.header__theme-menu-button_active {
 	outline: 1px solid #ff0070;
 }
 
-.header__title {
-	font-family: 'IBM Plex Mono', sans-serif;
-	font-weight: 700;
-	font-size: 116px;
+.header__theme-menu-button:hover {
+	outline: 1px solid rgba(255, 0, 112, 0.4);
+}
+
+.header__theme-menu-button:focus-visible {
+	text-decoration: underline;
+	text-underline-offset: 5px;
+}
+
+.focus--text-transform {
+	font-weight: bold;
+	font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 	line-height: 83%;
 	letter-spacing: 0;
 	color: #db00ff;
@@ -79,17 +90,24 @@
 }
 
 .header__subtitle {
-	font-weight: 700;
-	font-size: 18px;
+	font-weight: bold;
 	line-height: 23.4px;
 	letter-spacing: 0;
+	max-width: 355px;
+	justify-self: end;
+}
+
+.header__subtitle span {
+	display: block;
+}
+
+.subtitle--decor {
 	background-color: #ff0070;
 	color: #000028;
 }
 
 .header__rec {
 	font-weight: 700;
-	font-size: 18px;
 	line-height: 24px;
 	letter-spacing: 0;
 }
@@ -98,17 +116,16 @@
 	content: 'REC';
 	position: absolute;
 	top: 10px;
-	left: calc(100% - 71px);
-	font-family: 'IBM Plex Mono', sans-serif;
-	font-weight: 400;
+	right: 38px;
+	font-weight: normal;
 	color: #ff0070;
 }
 
 .header__rec::after {
 	content: url('../images/ellipse.png');
 	position: absolute;
-	top: 11px;
-	left: calc(100% - 34px);
+	top: 13px;
+	right: 13px;
 }
 
 .main {
@@ -124,9 +141,23 @@
 	gap: 20px;
 }
 
+.main__section div {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.grid--images {
+	gap: 10px;
+}
+
+.main__images-list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
 .main__title {
-	font-family: 'IBM Plex Mono', sans-serif;
-	font-weight: 700;
 	font-size: 18px;
 	line-height: 23.4px;
 	letter-spacing: 0;
@@ -140,40 +171,25 @@
 }
 
 .main__subtitle {
-	font-family: 'IBM Plex Mono', sans-serif;
-	font-weight: 700;
 	font-size: 18px;
 	line-height: 23.4px;
 	letter-spacing: 0;
-	color: #000028;
-	background-color: #ff0070;
 }
 
 .main__text {
-	font-family: 'IBM Plex Mono', sans-serif;
-	font-weight: 400;
-	font-size: 18px;
 	line-height: 23.4px;
 	letter-spacing: 0;
 	color: #f1b2ce;
 }
 
 .main__description {
-	font-family: 'IBM Plex Mono', sans-serif;
-	font-weight: 700;
-	font-size: 18px;
+	font-weight: bold;
 	line-height: 23.4px;
 	letter-spacing: 0;
-	color: #000028;
-	background-color: #ff0070;
 }
 
-.main__subtitle--regular {
-	font-weight: 400;
-}
-
-.main__section--images {
-	gap: 10px;
+.subtitle--regular {
+	font-weight: normal;
 }
 
 .main__image {
@@ -184,16 +200,190 @@
 	cursor: pointer;
 	text-decoration: none;
 	color: #f1b2ce;
-	text-shadow: 1px 1px 0 #ff0070;
+}
+
+.main__link:hover {
+	border-bottom: 1px solid #f1b2ce;
+}
+
+.main__link:focus-visible {
+	outline: 1px solid #f1b2ce;
+}
+
+.text--shadow {
+	text-shadow: 2px 2px 0 #ff0070;
 }
 
 .footer {
 	margin-top: 40px;
 	padding: 10px;
-	height: 668px;
+	height: 100vh;
 	display: grid;
 	position: relative;
 	grid-template-rows: min-content;
 	align-content: center;
 	justify-items: center;
+}
+
+@media (width >= 768px) {
+	.header {
+		padding: 20px;
+		min-height: 1024px;
+	}
+
+	.decorated-zone::before {
+		top: 20px;
+		right: 20px;
+	}
+
+	.decorated-zone::after {
+		bottom: 20px;
+		left: 20px;
+	}
+
+	.header__rec::before {
+		top: 20px;
+		right: 48px;
+	}
+
+	.header__rec::after {
+		top: 23px;
+		right: 23px;
+	}
+
+	h1.focus--text-transform {
+		margin-left: -20px;
+	}
+
+	.header__subtitle {
+		max-width: 364px;
+		justify-self: end;
+	}
+
+	.main {
+		padding: 0 10px;
+		margin-top: 60px;
+		gap: 80px;
+	}
+
+	.grid--why {
+		grid-template-columns: 236px 1fr;
+		grid-template-rows: repeat(auto-fill, min-content);
+	}
+
+	.grid--why .main__title {
+		grid-column: 1;
+		grid-row: 1 / -1;
+	}
+
+	.grid--why .main__article {
+		grid-column: 2;
+	}
+
+	.grid--what .main__title {
+		inline-size: 236px;
+	}
+
+	.grid--advice {
+		grid-template-columns: 236px 1fr;
+	}
+
+	.grid--advice .main__title {
+		grid-column: 1;
+		grid-row: 1 / -1;
+	}
+
+	.grid--advice .main__article {
+		grid-column: 2;
+	}
+
+	.grid--images {
+		gap: 20px;
+	}
+
+	div.main__images-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-areas:
+			'sunset sunset ice-cream'
+			'tape books ice-cream'
+			'tape street street';
+		gap: 20px;
+	}
+
+	.sunset {
+		grid-area: sunset;
+	}
+
+	.ice-cream {
+		grid-area: ice-cream;
+		object-fit: cover;
+		height: 100%;
+	}
+
+	.tape {
+		grid-area: tape;
+		object-fit: cover;
+		height: 100%;
+	}
+
+	.books {
+		grid-area: books;
+	}
+
+	.street {
+		grid-area: street;
+	}
+
+	.footer {
+		margin-top: 60px;
+		min-height: 1024px;
+	}
+}
+
+@media (width >= 1024px) {
+	.header {
+		min-height: 768px;
+	}
+
+	.header__theme-menu {
+		align-self: start;
+		justify-items: center;
+	}
+
+	.header__theme-menu-list {
+		flex-direction: row;
+		gap: 15px;
+	}
+
+	.focus--text-transform {
+		font-size: 157px;
+	}
+
+	.header__subtitle {
+		align-self: center;
+		max-width: 491px;
+	}
+
+	.grid--why {
+		grid-template-columns: 315px 1fr;
+	}
+
+	.grid--what .main__title {
+		inline-size: 315px;
+	}
+
+	.grid--what div {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+	}
+
+	.grid--advice {
+		grid-template-columns: 315px 1fr;
+	}
+
+	.footer {
+		min-height: 768px;
+	}
 }
