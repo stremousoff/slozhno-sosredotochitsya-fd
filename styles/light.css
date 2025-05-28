@@ -1,16 +1,37 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
+.theme-light .page {
+	--accent-color: #353430;
+	--focus-text-color: #ffc2e6;
+	--focus-shadow-color: #ff8dcb;
+	--title-text-color: #353430;
+	--background-subtitle-color: #ff8dcb;
+	--subtitle-text-color: #353430;
+	--text-color: #353430;
+	--text-link-color: #353430;
 
-:root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+	--button-border-color: #353430;
+	--button-hover-color: rgba(50, 49, 45, 0.4);
+
+	--background-image: url('../images/cover-image-light.png');
+
+	--rec-decor-visibility: none;
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+@media (prefers-color-scheme: light) {
+	:root {
+		--accent-color: #353430;
+		--focus-text-color: #ffc2e6;
+		--focus-shadow-color: #ff8dcb;
+		--title-text-color: #353430;
+		--background-subtitle-color: #ff8dcb;
+		--subtitle-text-color: #353430;
+		--text-color: #353430;
+		--text-link-color: #353430;
+
+		--button-border-color: #353430;
+		--button-hover-color: rgba(50, 49, 45, 0.4);
+
+		--background-image: url('../images/cover-image-light.png');
+
+		--rec-decor-visibility: none;
+	}
 }
