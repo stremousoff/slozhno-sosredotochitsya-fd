@@ -12,6 +12,8 @@
 	--button-border-color: #353430;
 	--button-hover-color: rgba(50, 49, 45, 0.4);
 
+	--outline-link-color: #353430;
+
 	--background-image: url('../images/cover-image-light.png');
 
 	--rec-decor-visibility: none;
@@ -31,6 +33,8 @@
 
 		--button-border-color: #353430;
 		--button-hover-color: rgba(50, 49, 45, 0.4);
+
+		--outline-link-color: #353430;
 
 		--background-image: url('../images/cover-image-light.png');
 

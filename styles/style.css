@@ -71,7 +71,7 @@
 }
 
 .header__theme-menu-button:hover {
-	outline: 1px solid rgba(255, 0, 112, 0.4);
+	outline: 1px solid var(--button-hover-color);
 }
 
 .header__theme-menu-button:focus-visible {
@@ -192,6 +192,7 @@
 	font-weight: bold;
 	line-height: 23.4px;
 	letter-spacing: 0;
+	font-size: 18px;
 }
 
 .subtitle--regular {
@@ -213,7 +214,7 @@
 }
 
 .main__link:focus-visible {
-	outline: 1px solid var(--outline-color);
+	outline: 1px solid var(--outline-link-color);
 }
 
 .text--shadow {
