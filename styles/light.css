@@ -13,6 +13,7 @@
 	--button-hover-color: rgba(50, 49, 45, 0.4);
 
 	--outline-link-color: #353430;
+	--border-link-color: #353430;
 
 	--background-image: url('../images/cover-image-light.png');
 
@@ -35,6 +36,7 @@
 		--button-hover-color: rgba(50, 49, 45, 0.4);
 
 		--outline-link-color: #353430;
+		--border-link-color: #353430;
 
 		--background-image: url('../images/cover-image-light.png');
 

@@ -210,7 +210,7 @@
 }
 
 .main__link:hover {
-	border-bottom: 1px solid var(--accent-color);
+	border-bottom: 1px solid var(--border-link-color);
 }
 
 .main__link:focus-visible {
